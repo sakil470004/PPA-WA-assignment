@@ -26,37 +26,61 @@ export default function Home() {
       </nav>
 
       {/* ========== HERO SECTION ========== */}
-      <section className="py-16 text-center max-w-5xl mx-auto px-8">
-        {/* Small badge */}
-        <div className="inline-block bg-blue-500/20 text-blue-300 px-3 py-1 rounded-full text-xs mb-6">
-          Free Preview
+      {/* Hero section featuring course headline, tagline, and promotional video thumbnail */}
+      <section className="py-20 text-center max-w-6xl mx-auto px-8">
+        {/* Badge - indicates special preview offer */}
+        <div className="inline-block bg-gradient-to-r from-blue-500/20 to-blue-400/10 text-blue-300 px-4 py-2 rounded-full text-xs font-semibold mb-8 border border-blue-500/30 backdrop-blur-sm">
+          ✨ Free Preview Available
         </div>
         
-        {/* Main Headline */}
-        <h1 className="text-5xl font-bold mb-4 leading-tight">
+        {/* Main Headline - catchy and benefit-focused */}
+        <h1 className="text-6xl md:text-7xl font-bold mb-6 leading-tight tracking-tight">
           Master Focus &<br />Get More Done<br />in Less Time
         </h1>
         
-        {/* Subheading */}
-        <p className="text-gray-400 text-lg mb-8">
-          Stop feeling rushed, overwhelmed, or procrastinating instead of making progress, you're not alone.
+        {/* Subheading - addresses pain points */}
+        <p className="text-gray-400 text-xl max-w-3xl mx-auto mb-10 leading-relaxed">
+          Stop feeling rushed, overwhelmed, or procrastinating. Learn proven deep work techniques used by top performers to achieve peak productivity.
         </p>
         
-        {/* CTA Buttons */}
-        <div className="flex gap-4 justify-center mb-12">
-          <button className="bg-[#2563EB] hover:bg-blue-700 text-white px-8 py-3 rounded font-medium transition">
+        {/* CTA Button Group - primary action and alternative */}
+        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+          <button className="bg-gradient-to-r from-[#2563EB] to-blue-600 hover:from-blue-700 hover:to-blue-800 text-white px-10 py-4 rounded-lg font-semibold transition transform hover:scale-105 shadow-lg">
             Enroll Now
           </button>
-          <button className="border border-gray-600 text-white px-8 py-3 rounded font-medium hover:border-gray-400 transition">
-            Download Guide
+          <button className="border-2 border-gray-600 text-white px-10 py-4 rounded-lg font-semibold hover:border-blue-500 hover:bg-blue-500/10 transition">
+            Download Free Guide
           </button>
         </div>
         
-        {/* Video Placeholder with Play Button */}
-        <div className="bg-gradient-to-br from-orange-500 via-purple-500 to-blue-500 rounded-xl h-96 flex items-center justify-center">
-          <div className="w-16 h-16 bg-white/30 rounded-full flex items-center justify-center hover:bg-white/50 transition cursor-pointer">
-            <div className="text-white text-3xl">▶</div>
+        {/* Video Showcase Section - hero visual with play action */}
+        <div className="relative max-w-4xl mx-auto">
+          {/* Video thumbnail container with gradient background */}
+          <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+            {/* Gradient background simulating video thumbnail */}
+            <div className="bg-gradient-to-br from-blue-600 via-purple-600 to-orange-500 h-96 flex items-center justify-center relative">
+              {/* Subtle noise/texture overlay */}
+              <div className="absolute inset-0 opacity-10 bg-repeating-linear-gradient(45deg, transparent, transparent 3px, rgba(255,255,255,.1) 3px, rgba(255,255,255,.1) 6px)"></div>
+              
+              {/* Play Button - floating circle with icon */}
+              <div className="relative z-10">
+                <button className="w-24 h-24 rounded-full bg-white/20 backdrop-blur-sm border-4 border-white/40 flex items-center justify-center hover:bg-white/30 hover:border-white/60 transition-all transform hover:scale-110 group shadow-lg">
+                  {/* Play icon - centered triangle */}
+                  <svg className="w-10 h-10 text-white fill-current ml-1 group-hover:scale-125 transition" viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            
+            {/* Border frame effect */}
+            <div className="absolute inset-0 rounded-2xl border-8 border-black/50 pointer-events-none"></div>
           </div>
+          
+          {/* Optional: Subtitle under video */}
+          <p className="text-gray-400 text-sm mt-6 text-center">
+            Preview the first module and discover how you can transform your productivity in just 15 minutes a day
+          </p>
         </div>
       </section>
 
@@ -140,46 +164,74 @@ export default function Home() {
       </section>
 
       {/* ========== BENEFITS SECTION ========== */}
-      <section className="bg-[#111827] py-16">
+      {/* Highlights the key outcomes students will achieve from the course */}
+      <section className="bg-[#111827] py-20">
         <div className="max-w-5xl mx-auto px-8">
-          <h2 className="text-3xl font-bold text-center mb-12">
-            A self-paced results-driven<br />course designed to help you
+          {/* Section headline - emphasizes course structure and outcomes */}
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 leading-tight">
+            A self-paced<br />results-driven course<br />designed to help you
           </h2>
           
-          <div className="grid grid-cols-2 gap-8">
-            {/* Benefit 1 */}
-            <div className="flex gap-4">
-              <div className="text-blue-400 text-2xl font-bold mt-1">●</div>
-              <div>
-                <h3 className="font-semibold mb-2">Develop deep work skills</h3>
-                <p className="text-gray-400 text-sm">Master techniques that help you concentrate better and produce your best work</p>
+          {/* Benefits grid - 2 columns on desktop, stacked on mobile */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+            {/* Benefit 1 - Develop deep work skills */}
+            <div className="flex gap-6 items-start group hover:transform hover:scale-105 transition duration-300">
+              {/* Numbered badge - circular design with blue gradient */}
+              <div className="flex-shrink-0">
+                <div className="flex items-center justify-center h-12 w-12 rounded-full bg-gradient-to-br from-blue-500 to-blue-600 shadow-lg">
+                  <span className="text-white font-bold text-lg">1</span>
+                </div>
+              </div>
+              
+              {/* Benefit content - title and description */}
+              <div className="flex-1">
+                <h3 className="text-lg font-semibold text-white mb-2">Develop deep work skills</h3>
+                <p className="text-gray-400 leading-relaxed">Master techniques that help you concentrate better and produce your best work consistently</p>
               </div>
             </div>
             
-            {/* Benefit 2 */}
-            <div className="flex gap-4">
-              <div className="text-blue-400 text-2xl font-bold mt-1">●</div>
-              <div>
-                <h3 className="font-semibold mb-2">Eliminate distractions</h3>
-                <p className="text-gray-400 text-sm">Learn how to create an environment free from interruptions and stay focused</p>
+            {/* Benefit 2 - Eliminate distractions */}
+            <div className="flex gap-6 items-start group hover:transform hover:scale-105 transition duration-300">
+              {/* Numbered badge */}
+              <div className="flex-shrink-0">
+                <div className="flex items-center justify-center h-12 w-12 rounded-full bg-gradient-to-br from-blue-500 to-blue-600 shadow-lg">
+                  <span className="text-white font-bold text-lg">2</span>
+                </div>
+              </div>
+              
+              <div className="flex-1">
+                <h3 className="text-lg font-semibold text-white mb-2">Eliminate distractions</h3>
+                <p className="text-gray-400 leading-relaxed">Learn proven strategies to create an environment free from interruptions and maintain laser focus</p>
               </div>
             </div>
             
-            {/* Benefit 3 */}
-            <div className="flex gap-4">
-              <div className="text-blue-400 text-2xl font-bold mt-1">●</div>
-              <div>
-                <h3 className="font-semibold mb-2">Boost productivity</h3>
-                <p className="text-gray-400 text-sm">Get more important work done in less time with proven productivity systems</p>
+            {/* Benefit 3 - Boost productivity */}
+            <div className="flex gap-6 items-start group hover:transform hover:scale-105 transition duration-300">
+              {/* Numbered badge */}
+              <div className="flex-shrink-0">
+                <div className="flex items-center justify-center h-12 w-12 rounded-full bg-gradient-to-br from-blue-500 to-blue-600 shadow-lg">
+                  <span className="text-white font-bold text-lg">3</span>
+                </div>
+              </div>
+              
+              <div className="flex-1">
+                <h3 className="text-lg font-semibold text-white mb-2">Boost productivity</h3>
+                <p className="text-gray-400 leading-relaxed">Accomplish more important work in less time using time-tested productivity systems and frameworks</p>
               </div>
             </div>
             
-            {/* Benefit 4 */}
-            <div className="flex gap-4">
-              <div className="text-blue-400 text-2xl font-bold mt-1">●</div>
-              <div>
-                <h3 className="font-semibold mb-2">Build better habits</h3>
-                <p className="text-gray-400 text-sm">Create sustainable routines that support long-term success and fulfillment</p>
+            {/* Benefit 4 - Build better habits */}
+            <div className="flex gap-6 items-start group hover:transform hover:scale-105 transition duration-300">
+              {/* Numbered badge */}
+              <div className="flex-shrink-0">
+                <div className="flex items-center justify-center h-12 w-12 rounded-full bg-gradient-to-br from-blue-500 to-blue-600 shadow-lg">
+                  <span className="text-white font-bold text-lg">4</span>
+                </div>
+              </div>
+              
+              <div className="flex-1">
+                <h3 className="text-lg font-semibold text-white mb-2">Build better habits</h3>
+                <p className="text-gray-400 leading-relaxed">Create sustainable daily routines and practices that support long-term success and personal fulfillment</p>
               </div>
             </div>
           </div>
