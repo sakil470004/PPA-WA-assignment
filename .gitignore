@@ -42,3 +42,5 @@ next-env.d.ts
 
 # mac user-specific files
 *.DS_Store
+# local file
+designfile
