@@ -8,8 +8,23 @@ import heroImage from '../assets/demo_video_image.png';
 export default function HeroSection() {
    
   return (
-    <section className="py-20 text-center max-w-6xl mx-auto px-8 relative overflow-hidden">
+    <section 
+      className="py-20 text-center px-8 relative overflow-hidden"
+      style={{
+        background: `
+          repeating-linear-gradient(
+            0deg,
+            rgba(37, 99, 235, 0.1) 0px,
+            rgba(37, 99, 235, 0.1) 1px,
+            transparent 1px,
+            transparent 10px
+          ),
+          linear-gradient(to top, rgba(37, 99, 235, 0.4) 0%, rgba(0, 0, 0, 0.7) 100%)
+        `
+      }}
+    >
     
+    <div className='max-w-6xl mx-auto relative z-10'>
       {/* Badge - indicates special preview offer */}
       <div className="inline-block   px-4 py-2 rounded-full text-xs font-semibold mb-8 border border-blue-500/30 backdrop-blur-sm">
         ✨ 30% off until 4d : 2h : 41m : 17s
@@ -34,9 +49,10 @@ export default function HeroSection() {
           Download Free Guide
         </button>
       </div>
-      <div className="relative w-full max-w-4xl mx-auto rounded-lg overflow-hidden shadow-lg">
+      <div className="relative w-full max-w-4xl mx-auto rounded-lg overflow-hidden shadow-lg z-20">
         {/* Video Placeholder - simulates course promo video thumbnail */}
         <Image src={heroImage} alt="Course Promo Video" className="w-full h-auto object-cover" />
+        </div>
         </div>
     </section>
   );

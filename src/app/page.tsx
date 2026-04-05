@@ -16,7 +16,7 @@ import Footer from '@/components/Footer';
 
 export default function Home() {
   return (
-    <div className="bg-[#0A0E27] text-white">
+    <div className=" text-white">
       {/* Navigation Bar */}
       <Navigation />
 
