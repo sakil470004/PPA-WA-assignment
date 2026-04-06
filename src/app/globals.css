@@ -36,6 +36,23 @@ html {
   background: #1d4ed8;
 }
 
+/* Infinite text color animation - letter by letter from black to white */
+@keyframes letterGlow {
+  0% {
+    color: #000000;
+  }
+  50% {
+    color: #ffffff;
+  }
+  100% {
+    color: #000000;
+  }
+}
+
+.animate-letter-glow {
+  animation: letterGlow 10s ease-in-out infinite;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
