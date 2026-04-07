@@ -66,7 +66,7 @@ export default function CourseModulesSection() {
       <div className="max-w-7xl mx-auto">
         {/* Badge - Course Curriculum */}
         <div className="flex justify-center mb-12">
-          <div className="inline-flex items-center gap-2 bg-blue-600 rounded-full px-4 py-2 border border-blue-500">
+          <div className="inline-flex items-center gap-2  rounded-full px-4 py-2 border border-sky-500">
             <span className="w-2 h-2 bg-blue-400 rounded-full"></span>
             <span className="text-sm text-white font-medium">Course Curriculum</span>
           </div>
