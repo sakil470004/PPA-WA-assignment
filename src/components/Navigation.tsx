@@ -2,13 +2,18 @@
  * Navigation Component
  * Displays the main navigation bar with logo, links, and CTA button
  */
+'use client';
+
+import { useState } from 'react';
 import Image from 'next/image';
 import logo from '../assets/logo.png';
 
 export default function Navigation() {
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
     return (
         <nav className="border-b border-gray-800">
-            <div className="max-w-7xl mx-auto px-8 py-4 flex items-center justify-between">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between gap-4">
                 {/* Logo - Brand identifier with image */}
                 <div className="flex items-center gap-2">
                     <Image
@@ -22,13 +27,13 @@ export default function Navigation() {
                 </div>
 
                 {/* Nav Links - Center navigation menu */}
-                <div className="flex gap-8 text-sm text-gray-300">
+                <div className="hidden md:flex gap-8 text-sm text-gray-300">
                     <a href="#" className="hover:text-white transition">Overview</a>
                     <a href="#" className="hover:text-white transition">Curriculum</a>
                     <a href="#" className="hover:text-white transition">Testimonials</a>
                     <a href="#" className="hover:text-white transition">Pricing</a>
                 </div>
-                <div className='flex gap-8 items-center'>
+                <div className='hidden md:flex gap-8 items-center'>
                     {/* div for light and dark them radio default dark */}
                     <label className="toggle text-base-content font-bold ">
                         <input type="checkbox" />
@@ -43,6 +48,29 @@ export default function Navigation() {
                     </label>
                     {/* CTA Button - Primary action button */}
                     <button className="bg-[#2563EB] hover:bg-blue-700 rounded-lg text-white px-3 py-2 text-sm transition">
+                        Get Started
+                    </button>
+                </div>
+
+                <button
+                    type="button"
+                    className="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-lg border border-gray-700 text-gray-200"
+                    aria-label="Toggle navigation menu"
+                    aria-expanded={isMobileMenuOpen}
+                    onClick={() => setIsMobileMenuOpen((prev) => !prev)}
+                >
+                    <span className="sr-only">Toggle navigation menu</span>
+                    <span className="text-xl leading-none">☰</span>
+                </button>
+            </div>
+
+            <div className={`md:hidden border-t border-gray-800 px-4 sm:px-6 transition-all duration-200 ${isMobileMenuOpen ? 'max-h-96 py-4 opacity-100' : 'max-h-0 overflow-hidden py-0 opacity-0'}`}>
+                <div className="flex flex-col gap-4 text-sm text-gray-300">
+                    <a href="#" className="hover:text-white transition">Overview</a>
+                    <a href="#" className="hover:text-white transition">Curriculum</a>
+                    <a href="#" className="hover:text-white transition">Testimonials</a>
+                    <a href="#" className="hover:text-white transition">Pricing</a>
+                    <button className="mt-2 rounded-lg bg-[#2563EB] px-4 py-2 text-left text-white transition hover:bg-blue-700">
                         Get Started
                     </button>
                 </div>

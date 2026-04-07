@@ -24,23 +24,23 @@ export default function Footer() {
   const avatars = [person1, person2, person3];
 
   return (
-    <footer className="bg-[#0f0f0f] py-20 px-8">
+    <footer className="bg-[#0f0f0f] py-16 sm:py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Main Footer Content - Two Column Layout */}
-        <div className="flex items-center justify-between mb-16 pb-16 border-b border-gray-800">
+        <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-10 mb-16 pb-16 border-b border-gray-800">
           {/* Left Column - Branding */}
           <div className="flex-1">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-3 leading-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-3 leading-tight">
               The Deep<br />Work Blueprint
             </h2>
-            <p className="text-gray-400 text-lg">
+            <p className="text-gray-400 text-base sm:text-lg">
               Master Focus & Get More Done in Less Time
             </p>
           </div>
 
           {/* Right Column - CTA Card */}
-          <div className="flex-1 flex justify-end">
-            <div className="bg-blue-600 rounded-2xl p-8 max-w-sm w-full">
+          <div className="flex-1 flex justify-start lg:justify-end w-full">
+            <div className="bg-blue-600 rounded-2xl p-6 sm:p-8 max-w-sm w-full">
               {/* Avatars and Arrow */}
               <div className="flex items-center justify-between mb-6">
                 {/* Overlapping Avatars */}
@@ -61,7 +61,7 @@ export default function Footer() {
                 </div>
 
                 {/* Arrow Icon */}
-                <button className="w-12 h-12 rounded-full bg-white flex items-center justify-center hover:bg-gray-100 transition flex-shrink-0">
+                <button className="w-12 h-12 rounded-full bg-white flex items-center justify-center hover:bg-gray-100 transition flex-none">
                   <ArrowRightIcon className="w-6 h-6 text-blue-600" />
                 </button>
               </div>
@@ -75,14 +75,14 @@ export default function Footer() {
         </div>
 
         {/* Bottom Footer - Copyright and Links */}
-        <div className="flex items-center justify-between">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           {/* Copyright */}
           <p className="text-gray-400 text-sm">
             © Copyright 2024, All Rights Reserved
           </p>
 
           {/* Footer Links */}
-          <div className="flex items-center gap-8">
+          <div className="flex flex-wrap items-center gap-4 sm:gap-8">
             {footerLinks.map((link, index) => (
               <a
                 key={index}

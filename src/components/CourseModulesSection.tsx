@@ -62,7 +62,7 @@ export default function CourseModulesSection() {
   ];
 
   return (
-    <section className="py-16 px-8">
+    <section className="py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Badge - Course Curriculum */}
         <div className="flex justify-center mb-12">
@@ -73,7 +73,7 @@ export default function CourseModulesSection() {
         </div>
 
         {/* Section Heading */}
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-gray-300">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-16 text-gray-300">
           Mastering Deep Work: A Structured<br />Path to Peak Productivity
         </h2>
         
@@ -85,24 +85,24 @@ export default function CourseModulesSection() {
               <div key={module.id}>
                 {/* Module Header with duration */}
                 <div className="mb-6">
-                  <h3 className="text-lg font-semibold text-gray-400 mb-1">{module.title}</h3>
+                  <h3 className="text-base sm:text-lg font-semibold text-gray-400 mb-1">{module.title}</h3>
                   <p className="text-sm text-gray-500">{module.duration}</p>
                 </div>
 
                 {/* Lessons List */}
                 <div className="space-y-4">
                   {module.lessons.map((lesson) => (
-                    <div key={lesson.id} className="flex items-center justify-between border-b border-gray-700 pb-4">
+                    <div key={lesson.id} className="flex flex-col sm:flex-row sm:items-center justify-between border-b border-gray-700 pb-4 gap-3 sm:gap-4">
                       {/* Play button and lesson title */}
-                      <div className="flex items-center gap-4">
-                        <button className="flex items-center justify-center w-8 h-8 rounded-full text-blue-500 hover:text-blue-400 transition flex-shrink-0">
+                      <div className="flex items-center gap-4 min-w-0">
+                        <button className="flex items-center justify-center w-8 h-8 rounded-full text-blue-500 hover:text-blue-400 transition flex-none">
                           <PlayIcon className="w-5 h-5" />
                         </button>
-                        <span className="text-gray-300">{lesson.title}</span>
+                        <span className="text-gray-300 break-words">{lesson.title}</span>
                       </div>
 
                       {/* Duration and preview badge */}
-                      <div className="flex items-center gap-3 flex-shrink-0">
+                      <div className="flex items-center gap-3 flex-none self-start sm:self-auto">
                         {lesson.isPreview && (
                           <span className="bg-gray-800 text-gray-300 text-xs px-3 py-1 rounded-full">
                             Preview
@@ -119,15 +119,15 @@ export default function CourseModulesSection() {
 
           {/* Right Column - Feature Card */}
           <div className="lg:col-span-1">
-            <div className="bg-black border border-gray-800 rounded-2xl p-8 sticky top-20">
+            <div className="bg-black border border-gray-800 rounded-2xl p-6 sm:p-8 lg:sticky lg:top-20">
               {/* Card heading */}
-              <h3 className="text-2xl font-bold text-white mb-6">Not only video lessons!</h3>
+              <h3 className="text-xl sm:text-2xl font-bold text-white mb-6">Not only video lessons!</h3>
               
               {/* Features list with checkmark bullets */}
               <ul className="space-y-4 mb-8">
                 {features.map((feature, index) => (
                   <li key={index} className="flex items-start gap-3">
-                    <span className="w-5 h-5 rounded-full border border-gray-600 bg-gray-800 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <span className="w-5 h-5 rounded-full border border-gray-600 bg-gray-800 flex items-center justify-center flex-none mt-0.5">
                       <span className="w-2 h-2 bg-white rounded-full"></span>
                     </span>
                     <span className="text-sm text-gray-300">{feature}</span>
@@ -136,7 +136,7 @@ export default function CourseModulesSection() {
               </ul>
               
               {/* Call-to-action button */}
-              <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 rounded-lg transition">
+              <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg transition">
                 Enroll now
               </button>
             </div>

@@ -53,7 +53,7 @@ export default function HeroSection() {
    
   return (
     <section 
-      className="py-20 text-center px-8 relative overflow-hidden"
+      className="py-16 sm:py-20 text-center px-4 sm:px-6 lg:px-8 relative overflow-hidden"
       style={{
         background: `
           repeating-linear-gradient(
@@ -70,30 +70,30 @@ export default function HeroSection() {
     
     <div className='max-w-6xl mx-auto relative z-10'>
       {/* Badge - indicates special preview offer with live countdown */}
-      <div className="inline-block   px-4 py-2 rounded-full text-xs font-semibold mb-8 border border-blue-500/30 backdrop-blur-sm">
+      <div className="inline-block px-4 py-2 rounded-full text-[11px] sm:text-xs font-semibold mb-8 border border-blue-500/30 backdrop-blur-sm max-w-full leading-tight">
         ✨ 30% off until {formatTime(countdown.days)}d : {formatTime(countdown.hours)}h : {formatTime(countdown.minutes)}m : {formatTime(countdown.seconds)}s
       </div>
       
       {/* Main Headline - catchy and benefit-focused */}
-      <h1 className="text-6xl md:text-7xl  max-w-3xl mb-6 leading-tight tracking-tight mx-auto">
+      <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl max-w-3xl mb-6 leading-tight tracking-tight mx-auto">
         Master Focus & Get More Done in Less Time
       </h1>
       
       {/* Subheading - addresses pain points */}
-      <p className="text-gray-400 text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
+      <p className="text-gray-400 text-base sm:text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
         A step-by-step system to eliminate procrastination, train your brain for deep work, and boost productivity effortlessly.
       </p>
       
       {/* CTA Button Group - primary action and alternative */}
       <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-        <button className="bg-[#2563EB] hover:bg-blue-700 rounded-lg text-white px-3 py-2 text-sm transition">
+        <button className="bg-[#2563EB] hover:bg-blue-700 rounded-lg text-white px-5 py-3 text-sm sm:text-base transition w-full sm:w-auto">
           Enroll Now
         </button>
-        <button className="bg-[#2563EB] hover:bg-blue-700 rounded-lg text-white px-3 py-2 text-sm transition">
+        <button className="bg-[#2563EB] hover:bg-blue-700 rounded-lg text-white px-5 py-3 text-sm sm:text-base transition w-full sm:w-auto">
           Download Free Guide
         </button>
       </div>
-      <div className="relative w-full max-w-4xl mx-auto rounded-lg overflow-hidden shadow-lg z-20">
+      <div className="relative w-full max-w-4xl mx-auto rounded-2xl overflow-hidden shadow-lg z-20">
         {/* Video Placeholder - simulates course promo video thumbnail */}
         <Image src={heroImage} alt="Course Promo Video" className="w-full h-auto object-cover" />
         </div>

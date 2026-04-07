@@ -51,32 +51,32 @@ export default function ProblemSection() {
   const headingText = "If you struggle to focus, feel overwhelmed by endless tasks, or procrastinate instead of making progress, you're not alone.";
 
   return (
-    <section className="bg-[#1a202c] py-20">
-      <div className="max-w-6xl mx-auto px-8 text-center">
+    <section className="bg-[#1a202c] py-16 sm:py-20">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         {/* Badge - Introduces the main pain point */}
-        <div className="inline-flex items-center gap-2 bg-[#1f2937] rounded-full px-6 py-2 mb-8 border border-gray-700">
+        <div className="inline-flex items-center gap-2 bg-[#1f2937] rounded-full px-4 sm:px-6 py-2 mb-8 border border-gray-700 max-w-full">
           <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
-          <span className="text-sm text-gray-300">Are Distractions Holding You Back?</span>
+          <span className="text-xs sm:text-sm text-gray-300">Are Distractions Holding You Back?</span>
         </div>
 
         {/* Main heading - Letter by letter animation from left to right */}
-        <h2 className="text-4xl md:text-5xl font-bold mb-12 leading-tight max-w-5xl mx-auto text-gray-400">
+        <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-12 leading-tight max-w-5xl mx-auto text-gray-400">
           <AnimatedText text={headingText} />
         </h2>
 
         {/* Problem Images Grid - Visual representation of the problems */}
-        <div className="flex justify-center items-center gap-4">
+        <div className="grid  grid-cols-1  md:grid-cols-3 gap-4  max-w-sm mx-auto ">
           {problemImages.map((image, index) => (
-            <div key={index} className="relative">
+            <div key={index} className="relative mx-auto">
               {/* Rounded image container - Shows real people facing these challenges */}
-              <div className="w-32 h-40 rounded-2xl overflow-hidden">
+              <div className="relative w-40 sm:w-32 h-48 rounded-2xl overflow-hidden">
                 {/* Display actual problem scenario images */}
                 <Image
                   src={image.src}
                   alt={image.alt}
-                  width={128}
-                  height={160}
-                  className="object-cover w-full h-full"
+                  fill
+                  sizes="(max-width: 640px) 160px, 128px"
+                  className="object-cover"
                   priority={index === 0}
                 />
               </div>
