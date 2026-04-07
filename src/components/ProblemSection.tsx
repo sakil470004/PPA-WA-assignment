@@ -65,7 +65,7 @@ export default function ProblemSection() {
         </h2>
 
         {/* Problem Images Grid - Visual representation of the problems */}
-        <div className="grid  grid-cols-1  md:grid-cols-3 gap-4  max-w-sm mx-auto ">
+        <div className="flex md:grid  md:grid-cols-3 gap-4 overflow-x-auto  max-w-sm mx-auto ">
           {problemImages.map((image, index) => (
             <div key={index} className="relative mx-auto">
               {/* Rounded image container - Shows real people facing these challenges */}
