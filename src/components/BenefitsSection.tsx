@@ -1,64 +1,71 @@
 /**
  * Benefits Section Component
  * Displays the key outcomes and benefits students will achieve
+ * Uses DaisyUI steps component for vertical timeline with Heroicons
  */
 
+import { LightBulbIcon, SparklesIcon, CheckCircleIcon, ArrowPathIcon } from '@heroicons/react/24/solid';
+
 interface Benefit {
-  number: number;
   title: string;
-  description: string;
+  icon: React.ReactNode;
 }
 
 export default function BenefitsSection() {
+  // Benefits displayed in vertical timeline using DaisyUI steps with icons
   const benefits: Benefit[] = [
     {
-      number: 1,
-      title: 'Develop deep work skills',
-      description: 'Master techniques that help you concentrate better and produce your best work consistently',
+      title: 'Develop laser-sharp focus & eliminate distractions.',
+      icon: <LightBulbIcon className="w-6 h-6 text-white" />,
     },
     {
-      number: 2,
-      title: 'Eliminate distractions',
-      description: 'Learn proven strategies to create an environment free from interruptions and maintain laser focus',
+      title: 'Master deep work techniques for smarter productivity.',
+      icon: <SparklesIcon className="w-6 h-6 text-white" />,
     },
     {
-      number: 3,
-      title: 'Boost productivity',
-      description: 'Accomplish more important work in less time using time-tested productivity systems and frameworks',
+      title: 'Overcome procrastination & get more done.',
+      icon: <CheckCircleIcon className="w-6 h-6 text-white" />,
     },
     {
-      number: 4,
-      title: 'Build better habits',
-      description: 'Create sustainable daily routines and practices that support long-term success and personal fulfillment',
+      title: 'Build lasting habits for long-term success.',
+      icon: <ArrowPathIcon className="w-6 h-6 text-white" />,
     },
   ];
 
   return (
-    <section className="bg-[#111827] py-20">
-      <div className="max-w-5xl mx-auto px-8">
-        {/* Section headline - emphasizes course structure and outcomes */}
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 leading-tight">
-          A self-paced<br />results-driven course<br />designed to help you
+    <section className="bg-[#1a202c] py-24">
+      <div className="max-w-6xl mx-auto px-8">
+        {/* Badge - Course name */}
+        <div className="flex justify-center mb-12">
+          <div className="inline-flex items-center gap-2 bg-[#1f2937] rounded-full px-6 py-2 border border-gray-700">
+            <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
+            <span className="text-sm text-gray-300">The Deep Work Blueprint</span>
+          </div>
+        </div>
+
+        {/* Section headline */}
+        <h2 className="text-4xl md:text-5xl font-bold text-center mb-20 leading-tight max-w-4xl mx-auto text-white">
+          A self-paced, results-driven course designed to help you
         </h2>
-        
-        {/* Benefits grid - 2 columns on desktop, stacked on mobile */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-          {benefits.map((benefit) => (
-            <div key={benefit.number} className="flex gap-6 items-start group hover:transform hover:scale-105 transition duration-300">
-              {/* Numbered badge - circular design with blue gradient */}
-              <div className="flex-shrink-0">
-                <div className="flex items-center justify-center h-12 w-12 rounded-full bg-gradient-to-br from-blue-500 to-blue-600 shadow-lg">
-                  <span className="text-white font-bold text-lg">{benefit.number}</span>
+
+        {/* DaisyUI Steps Component - Vertical timeline */}
+        <div className="flex justify-center">
+          <ul className="steps steps-vertical-custom ">
+            {benefits.map((benefit, index) => (
+              <li key={index} className="step step-primary ">
+                <div className="flex flex-col items-start gap-3  ml-6 mb-8 translate-y-15">
+                  {/* Icon inside circle */}
+                  <div className="flex items-center justify-center w-12 h-12 rounded-full bg-opacity-50 border border-blue-500 ">
+                    {benefit.icon}
+                  </div>
+                  {/* Benefit text */}
+                  <div className="text-left text-gray-300 mb-6">
+                    <p className="text-lg font-medium max-w-60">{benefit.title}</p>
+                  </div>
                 </div>
-              </div>
-              
-              {/* Benefit content - title and description */}
-              <div className="flex-1">
-                <h3 className="text-lg font-semibold text-white mb-2">{benefit.title}</h3>
-                <p className="text-gray-400 leading-relaxed">{benefit.description}</p>
-              </div>
-            </div>
-          ))}
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </section>
