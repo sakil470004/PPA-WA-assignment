@@ -136,7 +136,7 @@ export default function CourseModulesSection() {
               </ul>
               
               {/* Call-to-action button */}
-              <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg transition">
+              <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 rounded-lg transition">
                 Enroll now
               </button>
             </div>
