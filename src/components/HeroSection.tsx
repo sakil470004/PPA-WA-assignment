@@ -2,10 +2,54 @@
  * Hero Section Component
  * Main attention-grabbing section featuring headline, tagline, CTA buttons, and promotional video
  */
+'use client';
+
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import heroImage from '../assets/demo_video_image.png';
 
 export default function HeroSection() {
+  // Countdown timer state - starts at 4 days, 2 hours, 41 minutes, 17 seconds
+  const [countdown, setCountdown] = useState({
+    days: 4,
+    hours: 2,
+    minutes: 41,
+    seconds: 17,
+  });
+
+  // Countdown timer effect - updates every second
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCountdown((prev) => {
+        let { days, hours, minutes, seconds } = prev;
+
+        // Decrement seconds and cascade to higher units
+        if (seconds > 0) {
+          seconds--;
+        } else if (minutes > 0) {
+          minutes--;
+          seconds = 59;
+        } else if (hours > 0) {
+          hours--;
+          minutes = 59;
+          seconds = 59;
+        } else if (days > 0) {
+          days--;
+          hours = 23;
+          minutes = 59;
+          seconds = 59;
+        }
+
+        return { days, hours, minutes, seconds };
+      });
+    }, 1000);
+
+    // Cleanup interval on component unmount
+    return () => clearInterval(timer);
+  }, []);
+
+  // Format time values to always display 2 digits
+  const formatTime = (value: number) => String(value).padStart(2, '0');
    
   return (
     <section 
@@ -25,9 +69,9 @@ export default function HeroSection() {
     >
     
     <div className='max-w-6xl mx-auto relative z-10'>
-      {/* Badge - indicates special preview offer */}
+      {/* Badge - indicates special preview offer with live countdown */}
       <div className="inline-block   px-4 py-2 rounded-full text-xs font-semibold mb-8 border border-blue-500/30 backdrop-blur-sm">
-        ✨ 30% off until 4d : 2h : 41m : 17s
+        ✨ 30% off until {formatTime(countdown.days)}d : {formatTime(countdown.hours)}h : {formatTime(countdown.minutes)}m : {formatTime(countdown.seconds)}s
       </div>
       
       {/* Main Headline - catchy and benefit-focused */}
